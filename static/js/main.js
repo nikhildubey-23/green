@@ -3,11 +3,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // PRELOADER
     setTimeout(() => {
         document.getElementById('preloader').classList.add('hidden');
-        document.body.style.overflow = 'visible';
+        document.body.style.removeProperty('overflow');
     }, 1800);
 
     // HERO SLIDESHOW
     const heroSlides = document.querySelectorAll('.hero-bg');
+    heroSlides.forEach(slide => {
+        const bg = slide.dataset.bg;
+        if (bg) {
+            slide.style.backgroundImage = `url('${bg}')`;
+        }
+    });
     if (heroSlides.length > 1) {
         let slideIndex = 0;
         setInterval(() => {

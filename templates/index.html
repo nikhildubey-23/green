@@ -84,7 +84,7 @@
 <!-- HERO -->
 <section id="hero" class="hero">
     {% for img in hero_images %}
-    <div class="hero-bg{% if loop.first %} active{% endif %}" style="background-image: url('{{ url_for('static', filename='images/' + img) }}');"></div>
+    <div class="hero-bg{% if loop.first %} active{% endif %}" data-bg="{{ url_for('static', filename='images/' + img) }}"></div>
     {% endfor %}
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -92,7 +92,7 @@
         <h1 class="hero-title">GREENMOUNT <span>TOWER</span></h1>
         <p class="hero-subtitle">Premium Commercial Spaces in Bilaspur</p>
         <div class="hero-rera-badge">
-            <i class="bi bi-patch-check-fill"></i> RERA Approved &mdash; PCGRERA140520002095
+            <i class="bi bi-patch-check-fill"></i> RERA Approved &mdash; PCGRERA1405260002095
         </div>
         <p class="hero-desc">Where business meets excellence. Discover world-class commercial spaces designed for visionary enterprises in the heart of Bilaspur.</p>
         <div class="hero-buttons">

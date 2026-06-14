@@ -23,13 +23,24 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: clip;
+    width: 100%;
 }
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--black);
     background: var(--off-white);
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
     line-height: 1.7;
+}
+img,
+iframe {
+    max-width: 100%;
+}
+.row > * {
+    min-width: 0;
 }
 ::selection {
     background: var(--gold);
@@ -985,6 +996,8 @@ a {
 .contact-info-card .info-item .text {
     font-size: 0.88rem;
     color: rgba(255, 255, 255, 0.8);
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 .contact-info-card .info-item .text strong {
     color: var(--white);
@@ -1103,11 +1116,14 @@ textarea.form-control {
 }
 .footer-links li {
     margin-bottom: 10px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 .footer-links a {
     color: rgba(255, 255, 255, 0.5);
     font-size: 0.85rem;
     transition: var(--transition);
+    overflow-wrap: anywhere;
 }
 .footer-links a:hover {
     color: var(--gold);
@@ -1123,6 +1139,9 @@ textarea.form-control {
 }
 .footer-bottom a {
     color: var(--gold);
+}
+.footer-bottom p {
+    overflow-wrap: anywhere;
 }
 
 /* BACK TO TOP */
